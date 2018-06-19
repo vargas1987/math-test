@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+
+use Symfony\Component\Console\Application;
+use Commands\ArithmeticsCommand;
+
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/Commands/ArithmeticsCommand.php';
+require_once __DIR__.'/Exceptions/NotScalarException.php';
+require_once __DIR__.'/Exceptions/NotIntegerException.php';
+require_once __DIR__.'/Exceptions/NotDivideZeroException.php';
+require_once __DIR__.'/Lib/Math.php';
+
+
+$app = new Application('Console Application', 'v1.0.0');
+$app->add(new ArithmeticsCommand());
+$app -> run();
